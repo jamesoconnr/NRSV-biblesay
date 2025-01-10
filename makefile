@@ -8,7 +8,9 @@ install:
 	cp -f biblesay.py $(DESTDIR)$(PREFIX)/bin/biblesay
 	mkdir -p $(DESTDIR)$(PREFIX)/share/biblesay
 	cp -f verses.txt $(DESTDIR)$(PREFIX)/share/biblesay
+	cp -f ascii.txt $(DESTDIR)$(PREFIX)/share/biblesay
 
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/biblesay
 	rm -f $(DESTDIR)$(PREFIX)/share/biblesay/verses.txt
+	rm -f $(DESTDIR)$(PREFIX)/share/biblesay/ascii.txt

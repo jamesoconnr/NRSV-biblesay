@@ -25,9 +25,18 @@ def load_ascii_art():
 
 if __name__ == '__main__':
     # Read verse file
-    verses_file = open('verses.txt')
-    verses = verses_file.readlines()
-    verses_file.close()
+    try:
+        verses_file = open('verses.txt')
+        verses = verses_file.readlines()
+        verses_file.close()
+    except FileNotFoundError:
+        try:
+            verses_file = open('/usr/share/biblesay/verses.txt')
+            verses = verses_file.readlines()
+            verses_file.close()
+        except FileNotFoundError:
+            print("Error: Could not find verses.txt file")
+            exit(1)
 
     # Choose a verse
     verse = random.choice(verses)
